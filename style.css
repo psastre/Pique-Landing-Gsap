@@ -1,0 +1,634 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+
+.right-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: bisque;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  position: absolute;
+  height: 200vh;
+  width: 30vw;
+
+  background-color: black;
+}
+
+.center-container {
+  position: absolute;
+  top: 24vh;
+  left: 11vw;
+  height: 54vh;
+  width: 45vw;
+  background-image: url("https://bernhardt.com/sites/default/files/bernhardt_upholstery_plush_drew_noland_whitley_banner_fall2020.jpg");
+  background-size: cover;
+  -webkit-box-shadow: 7px 29px 49px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 7px 29px 49px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 7px 29px 49px 0px rgba(0, 0, 0, 0.5);
+}
+.story {
+  position: absolute;
+  height: 63%;
+  left: 60vw;
+  top: 24vh;
+  display: inline-block;
+}
+.story h1 {
+  font-size: 9vw;
+  margin-bottom: 1rem;
+  font-family: "Garamond";
+}
+.story p {
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  padding-right: 15rem;
+  font-family: "Garamond";
+  margin-bottom: 2em;
+}
+.story p span:hover {
+  background-color: black;
+  color: bisque;
+}
+.story p span {
+  margin-left: 0rem;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-family: "Garamond";
+  border: 5px solid black;
+  padding: 7px;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+.nav-links {
+  display: inline-block;
+  justify-content: space-around;
+  width: 40%;
+  margin-top: 3em;
+}
+.nav-links li {
+  list-style: none;
+  margin-top: 4em;
+  opacity: 0;
+  margin-left: 50px;
+}
+
+.nav-links a {
+  color: bisque;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: "Garamond";
+  z-index: 999;
+  transition: 0.5s;
+}
+
+.nav-links a:hover {
+  color: white;
+  margin-left: 5px;
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    margin-left: 200px;
+  }
+  to {
+    margin-left: 50;
+    opacity: 1;
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 3rem;
+  right: 4rem;
+  width: 50px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 99;
+}
+.menu,
+.menu:after,
+.menu:before {
+  width: 50px;
+  height: 5px;
+}
+
+.menu {
+  position: relative;
+  transform: translateY(20px);
+  background: rgb(92, 91, 91);
+}
+
+.menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  background: black;
+}
+.menu:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background: black;
+}
+.menu-white {
+  position: relative;
+  transform: translateY(20px);
+  background: bisque;
+}
+
+.menu-white:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  background: bisque;
+}
+.menu-white:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background: bisque;
+}
+
+.social-container {
+  position: absolute;
+  bottom: 2rem;
+  right: 0rem;
+}
+.social-container-white {
+  position: absolute;
+  bottom: 2rem;
+  right: 0rem;
+  
+  z-index: 999;
+}
+
+.social-container-white li ul a{
+  color: rgb(124, 123, 122);
+}
+
+.social {
+  display: flex;
+}
+
+.social ul {
+  margin-right: 1rem;
+  font-weight: 600;
+  font-family: "helvetica";
+  font-size: 0.9em;
+}
+
+.social ul a{
+  text-decoration: none;
+  color: black;
+}
+.first-block {
+  position: absolute;
+  width: 0%;
+  height: 100vh;
+  background: black;
+  animation: go-left 4s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  left: 0;
+}
+
+@keyframes go-left {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+.menu-block {
+  position: fixed;
+  z-index: 99;
+  width: 0%;
+  height: 100vh;
+
+  background: black;
+  animation: go-left-menu 0.75s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  left: 0;
+}
+.menu-block-after {
+  position: fixed;
+  width: 40vw;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  animation: go-right-menu 0.75s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  left: 80%;
+  z-index: 99;
+}
+
+@keyframes go-right-menu {
+  0% {
+    left: 100%;
+    width: 0;
+  }
+  100% {
+    left: 79%;
+    width: 150vw;
+  }
+}
+@keyframes go-left-menu {
+  0% {
+    left: 82%;
+    width: 35vw;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+.logo {
+  padding: 3rem;
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+  color: bisque;
+  z-index: 99;
+}
+
+/*Second screen*/
+.second-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: bisque;
+  justify-content: center;
+  align-items: center;
+}
+
+.ima {
+  height: 350px;
+  width: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.ima1 {
+  position: relative;
+  background-image: url("ima2.jpg");
+  top: -12vh;
+  left: 0vw;
+  z-index: 3;
+}
+.ima2 {
+  position: relative;
+  background-image: url("ima1.jpg");
+  top: -12vh;
+  left: 0vw;
+}
+.ima3 {
+  position: relative;
+  background-image: url("ima3.jpg");
+  top: -12vh;
+}
+.story2 {
+  position: relative;
+  left: 1vw;
+  top: -10vh;
+  width: 159vw;
+}
+
+.story2 h4 {
+  font-size: 3.5vw;
+  margin-bottom: 1rem;
+  font-family: "Garamond";
+}
+.story2 h4 span {
+  color: bisque;
+}
+.story4 {
+  position: relative;
+  left: -24vw;
+  top: 30vh;
+  width: 85vw;
+}
+.story4 p {
+  color: bisque;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "Garamond";
+  color: white;
+}
+
+/*Third Screen*/
+.third-screen {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+
+  background: bisque;
+
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  width: 21vw;
+  height: 520px;
+  margin: 59px;
+  margin-top: 110px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid white;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.back-img {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.table {
+  background-image: url("table.jpg");
+}
+.chair {
+  background-image: url("chair.jpg");
+}
+.armchair {
+  background-image: url("armchair.jpg");
+}
+.gradiante {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(253, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.6054796918767507) 95%
+  );
+  z-index: 2;
+  transition: 0.5s ease;
+}
+
+.gradiante:hover {
+  opacity: 1;
+}
+.card:hover .imagen-fondo {
+  transform: scale(1.3);
+}
+
+.card h2 {
+  position: absolute;
+  color: white;
+  padding-top: 50px;
+  font-family: "Garamond";
+  font-size: 3rem;
+  transition: 1.3s ease;
+  text-align: center;
+  z-index: 3;
+}
+
+.card:hover h2 {
+  font-size: 2.5rem;
+}
+.medidas {
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 350px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+}
+.medidas button {
+  top: 25px;
+  z-index: 2;
+  background-color: Transparent;
+  border: 1px solid white;
+  border-radius: 9%;
+  color: white;
+  padding: 5px 15px;
+
+  margin: 15px 15px;
+  margin-top: 25px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 1s ease;
+}
+.card:hover .medidas {
+  opacity: 1;
+}
+
+.medidas button:hover {
+  color: black;
+  background-color: cornsilk;
+  border-color: black;
+}
+
+.medidas::after {
+  content: "";
+  background-color: white;
+  opacity: 0.5;
+  width: 500px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+
+  border-top: 3px solid black;
+  border-top-style: double;
+}
+
+.left-container-cel {
+  display: none;
+}
+
+#error_message {
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+.story2-cel {
+  display: none;
+}
+
+/*Responsive*/
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    font-size: 2rem;
+  }
+  .menu-container {
+    position: fixed;
+
+    width: 50px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .nav-links a {
+    font-size: 2rem;
+  }
+  .nav-links li {
+    margin-top: 5em;
+  }
+  .left-container {
+    display: none;
+  }
+  .left-container-cel {
+    display: block;
+    position: absolute;
+    height: 200vh;
+    width: 50vw;
+    background-color: black;
+    z-index: 2;
+  }
+
+  .center-container {
+    background-image: url("armchair.jpg");
+    top: 21vh;
+    left: 6vw;
+    height: 63vh;
+    width: 84vw;
+    z-index: 1;
+  }
+
+  .first-block {
+    display: none;
+  }
+
+  .story {
+    position: absolute;
+    height: 63%;
+    width: 50vw;
+    left: 10vw;
+    top: 24vh;
+    display: inline-block;
+    color: bisque;
+    z-index: 3;
+  }
+
+  .story h1 {
+    font-size: 11vw;
+  }
+  @keyframes go-right-menu {
+    0% {
+      left: 100%;
+      width: 0;
+    }
+    100% {
+      left: 50%;
+      width: 70vw;
+    }
+  }
+  @keyframes go-left-menu {
+    0% {
+      left: 50%;
+      width: 70vw;
+    }
+    100% {
+      left: 200%;
+      width: 0;
+    }
+  }
+
+  .social ul {
+    font-size: 0.6em;
+  }
+  .story p span {
+    border: 3px solid bisque;
+  }
+  .story p {
+    padding-right: 3rem;
+  }
+
+  .card {
+    display: flex;
+    width: 21vw;
+    height: 520px;
+    margin: 7px;
+    margin-top: 110px;
+  }
+  .card h2 {
+    writing-mode: tb-rl;
+  }
+  .ima {
+    top: 15vh;
+    width: 238px;
+  }
+  .ima3 {
+    display: none;
+  }
+  .story4 {
+    position: relative;
+    left: 0vw;
+    top: 13vh;
+    width: 75vw;
+    z-index: 4;
+  }
+  .story4 p {
+    color: bisque;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: "Garamond";
+    color: white;
+  }
+  .story2 {
+    display: none;
+  }
+
+  .story2-cel {
+    display: block;
+    position: absolute;
+    left: 9vw;
+    top: 100vh;
+    width: 80vw;
+    height: 80vh;
+    z-index: 4;
+  }
+
+  .story2-cel h4 {
+    font-size: 6.7vw;
+    margin-bottom: 1rem;
+    font-family: "Garamond";
+  }
+  .story2-cel h4 span {
+    color: bisque;
+  }
+}
